@@ -31,3 +31,16 @@ function extract () {
      echo "'$1' is not a valid file!"
   fi
 }
+
+## Change dirs and ls together
+function cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls --color=auto
+}
+
