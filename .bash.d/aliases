@@ -19,7 +19,11 @@ else
   export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 fi
 
-alias ls='ls --color=auto'
+# Check if we are on MacOS
+if [ $(uname) == 'Linux' ]; then
+  alias ls='ls --color=auto'
+fi
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -67,3 +71,8 @@ fi
 alias rm='echo "This is not the command you are looking for."; false'
 alias tp=/usr/local/bin/trash-put
 
+## python3 alias for MacOS
+alias python='/usr/bin/python3'
+
+## Colorized output
+[[ -s "/etc/grc.bashrc" ]] && source /etc/grc.bashrc
